@@ -3,14 +3,17 @@ import axios from "axios";
 import Titulo from "./Titulo";
 import ListAlumno from "./ListAlumno";
 import FormularioAlumno from "./FormularioAlumno";
-// import FormularioEditarAlumno from "./FormularioEditarAlumno";
+import FormularioEditarAlumno from "./FormularioEditarAlumno";
 
 /** Alertas con React Toastify */
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const HomePage = () => {
-  const [alumnos, setAlumnos] = useState([]);
+  const [alumnos, setAlumnos] = useState([]); // Para almacenar la lista de alumnos
+
+  const [alumnoEditar, setAlumnoEditar] = useState(null); // Para almacenar la data del alumno que se va a editar
+  const [showRegistroForm, setShowRegistroForm] = useState(true); //Para mostrar el formulario de acuerdo a la variable (true o false) formulario para registrar o editar
 
   const URL_API = "http://localhost/API-PHP/";
 
@@ -40,13 +43,14 @@ const HomePage = () => {
     }
   };
 
-  const actualizarAlumno = async (id) => {
+  const obtenerDatosAlumno = async (id) => {
     try {
-      console.log("funcion actualizar", id);
-      // Actualizar la lista de alumnos
-      obtenerAlumnos();
+      const response = await axios.get(`${URL_API}?id=${id}`);
+      console.log("datos del alumno:", response.data);
+      setShowRegistroForm(!showRegistroForm);
+      setAlumnoEditar(response.data); // Almacenar los datos del alumno
     } catch (error) {
-      console.error("Error al actualizar alumno:", error);
+      console.error("Error al actualizar el alumno:", error);
     }
   };
 
@@ -63,18 +67,43 @@ const HomePage = () => {
     }
   };
 
+  const handleActualizarAlumno = async (datosAlumno) => {
+    try {
+      console.log("Información del Alumno a actualizar:", datosAlumno);
+      // Realizar la solicitud PUT al backend
+      const response = await axios.put(
+        `${URL_API}${datosAlumno.id}`,
+        datosAlumno
+      );
+      console.log("Respuesta de la API:", response.data);
+      toast.success("Alumno actualizado correctamente.");
+      // Actualizar la lista de alumno
+      obtenerAlumnos();
+    } catch (error) {
+      console.error("Error al actualizar los datos del alumno:", error);
+      // Manejar el error si es necesario
+    }
+  };
+
   return (
     <>
       <ToastContainer />
       <div className="row justify-content-md-center">
         <div className="col-md-5">
-          <Titulo />
-          <FormularioAlumno agregarAlumno={agregarAlumno} />
+          <Titulo estado={showRegistroForm} />
+          {showRegistroForm ? (
+            <FormularioAlumno agregarAlumno={agregarAlumno} />
+          ) : (
+            <FormularioEditarAlumno
+              alumno={alumnoEditar}
+              handleActualizarAlumno={handleActualizarAlumno}
+            />
+          )}
         </div>
         <ListAlumno
           alumnos={alumnos}
           eliminarAlumno={eliminarAlumno}
-          actualizarAlumno={actualizarAlumno}
+          obtenerDatosAlumno={obtenerDatosAlumno}
         />
       </div>
     </>

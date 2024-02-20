@@ -118,7 +118,7 @@ const FormularioAlumno = ({ agregarAlumno }) => {
       </div>
       <div className="d-grid gap-2 mb-5">
         <button type="submit" className="btn btn-primary block btn_add">
-          Registrar
+          Registrar nuevo alumno
         </button>
       </div>
     </form>
