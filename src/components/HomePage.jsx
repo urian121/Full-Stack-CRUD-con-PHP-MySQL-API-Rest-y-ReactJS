@@ -47,7 +47,7 @@ const HomePage = () => {
     try {
       const response = await axios.get(`${URL_API}?id=${id}`);
       console.log("datos del alumno:", response.data);
-      setShowRegistroForm(!showRegistroForm);
+      setShowRegistroForm(false);
       setAlumnoEditar(response.data); // Almacenar los datos del alumno
     } catch (error) {
       console.error("Error al actualizar el alumno:", error);
@@ -90,7 +90,11 @@ const HomePage = () => {
       <ToastContainer />
       <div className="row justify-content-md-center">
         <div className="col-md-5">
-          <Titulo estado={showRegistroForm} />
+          <Titulo
+            estado={showRegistroForm}
+            setShowRegistroForm={setShowRegistroForm}
+          />
+          {/* Formulario para registrar o editar */}
           {showRegistroForm ? (
             <FormularioAlumno agregarAlumno={agregarAlumno} />
           ) : (
@@ -100,6 +104,8 @@ const HomePage = () => {
             />
           )}
         </div>
+
+        {/* Lista de Alumnos */}
         <ListAlumno
           alumnos={alumnos}
           eliminarAlumno={eliminarAlumno}

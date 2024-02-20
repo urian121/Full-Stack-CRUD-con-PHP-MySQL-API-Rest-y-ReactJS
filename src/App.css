@@ -45,3 +45,8 @@ hr {
   align-items: center;
   color: white;
 }
+.bi-arrow-left {
+  font-size: 40px;
+  font-weight: 800;
+  color: #15bc57;
+}

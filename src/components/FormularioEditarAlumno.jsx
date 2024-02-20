@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const FormularioAlumno = ({ handleActualizarAlumno, alumno }) => {
+  console.log("Llegue con el alumno: ", alumno);
   const [alumnoData, setAlumnoData] = useState({
     nombre_alumno: "",
     email_alumno: "",
