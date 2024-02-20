@@ -1,0 +1,31 @@
+
+
+const [alumnoEditar, setAlumnoEditar] = useState(null);
+const [showRegistroForm, setShowRegistroForm] = useState(true);
+
+
+
+  const handleEditarAlumno = (alumno) => {
+    setAlumnoEditar(alumno);
+    setShowRegistroForm(false);
+  };
+
+  const handleActualizarAlumno = (alumnoActualizado) => {
+    // Aquí manejas la lógica para actualizar el alumno en tu API
+    // Una vez actualizado, puedes volver a mostrar el formulario de registro
+    setShowRegistroForm(true);
+    setAlumnoEditar(null); // Reinicias el alumno a editar
+  };
+
+
+{showRegistroForm ? (
+            <FormularioAlumno agregarAlumno={agregarAlumno} />
+          ) : (
+            <FormularioEditarAlumno
+              alumno={alumnoEditar}
+              actualizarAlumno={handleActualizarAlumno}
+            />
+          )}
+
+
+

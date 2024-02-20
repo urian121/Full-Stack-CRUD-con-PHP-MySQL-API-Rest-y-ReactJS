@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Titulo from "./Titulo";
 import ListAlumno from "./ListAlumno";
 import FormularioAlumno from "./FormularioAlumno";
+// import FormularioEditarAlumno from "./FormularioEditarAlumno";
 
 /** Alertas con React Toastify */
 import { ToastContainer, toast } from "react-toastify";
@@ -60,14 +62,13 @@ const HomePage = () => {
       console.error("Error al agregar alumno:", error);
     }
   };
+
   return (
     <>
       <ToastContainer />
       <div className="row justify-content-md-center">
         <div className="col-md-5">
-          <h1 className="text-center mb-5 font-weight-bold">
-            Registrar alumno <hr />
-          </h1>
+          <Titulo />
           <FormularioAlumno agregarAlumno={agregarAlumno} />
         </div>
         <ListAlumno
