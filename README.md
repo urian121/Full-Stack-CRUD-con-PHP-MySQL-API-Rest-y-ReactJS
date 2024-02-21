@@ -46,6 +46,10 @@
     npm install
     npm run dev
 
+#### Resultado final
+
+![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/full-stack-php-mysql-reactjs.png)
+
 ### Expresiones de Gratitud 🎁
 
     Comenta a otros sobre este proyecto 📢
