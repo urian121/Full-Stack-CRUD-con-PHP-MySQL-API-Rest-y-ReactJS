@@ -33,9 +33,9 @@
         Código reutilizable: El código de este proyecto puede ser reutilizado en otros proyectos futuros.
         Aplicación práctica: Este proyecto te permitirá crear una aplicación web real que puedes utilizar o compartir con otros.
 
-#### Instalar la libreria react-toastify para crear las alertas.
+##### Instalar axios, para mejorar las solicitudes HTTP a la API
 
-    npm install --save react-toastify
+    npm i axios
 
 #### Instalar la libreria react-toastify para crear las alertas.
 
