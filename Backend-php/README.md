@@ -6,7 +6,7 @@
 
 #### Método GET ✅
 
-    👉 http://localhost/API-PHP/
+    👉 http://localhost/Full-Stack-CRUD-con-PHP-MySQL-API-Rest-y-ReactJS/Backend-php/
 
     [
         {
@@ -31,7 +31,7 @@
 
 #### Método GET ✅
 
-    👉 http://localhost/API-PHP/?id=4
+    👉 http://localhost/Full-Stack-CRUD-con-PHP-MySQL-API-Rest-y-ReactJS/Backend-php/?id=4
     {
         "id": "4",
         "nombre_alumno": "Brenda Viera",
@@ -44,7 +44,7 @@
 
 #### Método POST ✅
 
-    👉 http://localhost/API-PHP/
+    👉 http://localhost/Full-Stack-CRUD-con-PHP-MySQL-API-Rest-y-ReactJS/Backend-php/
     {
         "nombre_alumno": "Torres ",
         "email_alumno": "torres@gmail.com",
@@ -56,7 +56,7 @@
 
 #### Método PUT ✅
 
-    👉 http://localhost/API-PHP/
+    👉 http://localhost/Full-Stack-CRUD-con-PHP-MySQL-API-Rest-y-ReactJS/Backend-php/
     {
         "id":"6",
         "nombre_alumno": "nuevo",
@@ -69,7 +69,7 @@
 
 #### Método DELETE ✅
 
-    👉 http://localhost/API-PHP/?id=2
+    👉 http://localhost/Full-Stack-CRUD-con-PHP-MySQL-API-Rest-y-ReactJS/Backend-php/?id=2
 
 #### Nota
 
