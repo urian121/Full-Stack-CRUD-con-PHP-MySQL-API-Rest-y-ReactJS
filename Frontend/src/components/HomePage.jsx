@@ -79,6 +79,7 @@ const HomePage = () => {
       toast.success("Alumno actualizado correctamente.");
       // Actualizar la lista de alumno
       obtenerAlumnos();
+      setShowRegistroForm(true);
     } catch (error) {
       console.error("Error al actualizar los datos del alumno:", error);
       // Manejar el error si es necesario
