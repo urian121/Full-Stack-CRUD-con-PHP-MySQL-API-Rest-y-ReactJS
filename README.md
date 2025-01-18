@@ -1,6 +1,10 @@
 # Full Stack CRUD con PHP MySQL API Rest y ReactJS
 
-#### Desarrollar una aplicación web completa (full stack) que implemente las operaciones básicas CRUD (Crear, Leer, Actualizar y Eliminar) utilizando las siguientes tecnologías:
+Desarrollar una aplicación web completa (full stack) que implemente las operaciones básicas CRUD (Crear, Leer, Actualizar y Eliminar) utilizando las siguientes tecnologías:
+
+#### Resultado final
+
+![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/full-stack-php-mysql-reactjs.png)
 
 ##### Lado del servidor:
 
@@ -45,10 +49,6 @@
 
     npm install
     npm run dev
-
-#### Resultado final
-
-![](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/full-stack-php-mysql-reactjs.png)
 
 ### Expresiones de Gratitud 🎁
 
